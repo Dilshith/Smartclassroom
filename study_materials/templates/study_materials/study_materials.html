@@ -1,0 +1,32 @@
+{% extends 'temp/teacher.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+	<table align="center">
+		<tr>
+		<td>subject </td>
+		<td><input type="text" name="sub" required></td>
+	</tr>
+	<tr>
+
+		<td>material</td>
+		<td><input type="file" name="material" required></td>
+	</tr>
+	<tr>
+		<td></td>
+         <td><input type="submit" value="submit"name="submit" required class="button btn-primary"></td>
+</table>
+</form>
+</tr>
+	</table>
+
+</body>
+</html>
+{% endblock %}

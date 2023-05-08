@@ -1,0 +1,124 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+{#	<title></title>#}
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+			line-height: 1.5;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			margin: 20px auto;
+			max-width: 900px;
+			padding: 20px;
+			{#background-color: #fff;#}
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		}
+
+		.table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		.table th,
+		.table td {
+			padding: 10px;
+			text-align: left;
+		}
+
+		.table th {
+			background-color: #428bca;
+			color: #fff;
+			font-weight: bold;
+		}
+
+		.table tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+
+		.table tr:hover {
+			background-color: #e2e2e2;
+		}
+
+		.table a {
+			color: #428bca;
+			text-decoration: none;
+		}
+
+	</style>
+{#</head>#}
+{#<body>#}
+	<div class="container">
+		<table class="table">
+{#			<tr>#}
+{#				<th>username</th>#}
+{#				<th>qualification</th>#}
+{#				<th>department</th>#}
+{#				<th>email</th>#}
+{#				<th>address</th>#}
+{#				<th>phone</th>#}
+{#				<th>status</th>#}
+{#				<th>Action</th>#}
+{#			</tr>#}
+{#			{% for i in x %}#}
+{#			<tr>#}
+{#				<td>{{ i.username }}</td>#}
+{#				<td>{{ i.qualification }}</td>#}
+{#				<td>{{ i.department }}</td>#}
+{#				<td>{{ i.email }}</td>#}
+{#				<td>{{ i.address }}</td>#}
+{#				<td>{{ i.phone }}</td>#}
+{#				<td>{{ i.status }}</td>#}
+{#				<td>#}
+{#					<a href="{% url 'ap' idd=i.teacher_id %}">Approve</a> </td>|#}
+{#					<td><a href="{% url 'rj' idd=i.teacher_id %}">Reject</a>#}
+{#				</td>#}
+{#			</tr>#}
+{#			{% endfor %}#}
+{#		</table>#}
+{#	</div>#}
+{#</body>#}
+{#</html>#}
+{##}
+
+
+<body>
+	<table border="1" class="table table-striped">
+		<tr>
+			<th>username</th>
+			<th>qualification</th>
+			<th>department</th>
+			<th>email</th>
+			<th>address</th>
+			<th>phone</th>
+			<th>status</th>
+		</tr>
+		<tr>
+                {% for i in x %}
+
+                   <td>{{ i.username }}</td>
+                    <td>{{ i.qualification }}</td>
+                    <td>{{ i.department }}</td>
+                    <td>{{ i.email }}</td>
+                    <td>{{ i.address }}</td>
+                    <td>{{ i.phone }}</td>
+                    <td>{{ i.status }}</td>
+			<td><a href="{% url 'app' idd=i.teacher_id %}">Approve</a></td>
+			<td><a href="{% url 'rje' idd=i.teacher_id %}">Reject</a></td>
+        </tr>
+                        {% endfor %}
+
+
+
+	</table>
+
+</body>
+</html>
+{% endblock %}

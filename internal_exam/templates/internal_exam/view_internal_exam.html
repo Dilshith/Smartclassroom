@@ -1,0 +1,56 @@
+{% extends 'temp/student.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exam</title>
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			max-width: 800px;
+			margin: 20px auto;
+            background-color: #fff;
+               box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		th, td {
+			padding: 12px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+		th {
+			background-color: #f2f2f2;
+            color: red;
+		}
+		tr:hover {
+			background-color: #f5f5f5;
+		}
+		.department {
+			color: #007bff;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>Exam id</th>
+			<th>Department Name</th>
+			<th>Exam Subject</th>
+            <th>Date</th>
+            <th>Time</th>
+		</tr>
+		{% for i in x %}
+			<tr>
+				<td>{{ i.exam_id }}</td>
+				<td class="department">{{ i.department.department_name }}</td>
+				<td>{{ i.exam_subject }}</td>
+                <td>{{ i.date }}</td>
+                <td>{{ i.time }}</td>
+			</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>
+
+{% endblock %}

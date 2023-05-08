@@ -1,0 +1,56 @@
+{% extends 'temp/home.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+ <form class="mx-auto" style="max-width: 300px; border: #0e2a47" method="post" >
+      {% csrf_token %}
+                        <div class="input-group">
+                            <input type="text" class="form-control  p-3" name="rnbr" placeholder="Roll Number" style="border-color: #0d6efd;" required="">
+                        </div>
+                        <br>
+
+                        <div class="input-group">
+                             <input type="text" class="form-control  p-3"  name="username"  placeholder="username" style="border-color: #0d6efd;" required="">
+                        </div>
+                         <br>
+                        <div class="input-group">
+                            <input type="text" class="form-control  p-3" name="pass" placeholder="Password" style="border-color: #0d6efd;" required="">
+                        </div>
+                            <br>
+
+                        <div class="input-group">
+                             <input type="text" class="form-control  p-3"  name="age"  placeholder="age" style="border-color: #0d6efd;" required="">
+                        </div>
+                         <br>
+                        <div class="input-group">
+                            <input type="text" class="form-control  p-3" name="dep" placeholder="Department" style="border-color: #0d6efd;" required="">
+                        </div>
+                            <br>
+
+                        <div class="input-group">
+                             <input type="email" class="form-control  p-3"  name="email"  placeholder="Email" style="border-color: #0d6efd;" required="">
+                        </div>
+                         <br>
+                        <div class="input-group">
+                            <input type="text" class="form-control  p-3" name="phone" placeholder="Phone Number" style="border-color: #0d6efd;" required pattern="[0-9]{10}" minlength="10" maxlength="10">
+                        </div>
+                            <br>
+
+                        <div >
+                            <label>Gender</label>
+                            <br><br>
+                              <input type="radio"  name="gen"  value="Male" >Male
+                              <input type="radio"   name="gen"  value="Female">Female
+                              <input type="radio"  name="gen"  value="Others">Others
+                        </div>
+                        <div >
+                            <input type="submit" class="btn btn-primary"  placeholder="Password" style="align-content": center"class="btn-primary">
+                        </div>
+  </form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+
+	</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+	<table align="center">
+	<tr>
+		<td>department</td>
+		<td><select name="dept">
+        <option value="">--select department--</option>
+            {% for i in xx %}
+                <option value="{{ i.department_id }}">{{ i.department_name }}</option>
+            {% endfor %}
+        </select> </td>
+	</tr>
+	<tr>
+
+		<td>time table</td>
+		<td><input type="file" name="timetable" required></td>
+	</tr>
+	<tr>
+		<td></td>
+         <td><input type="submit" value="submit"name="submit" required  class="button btn-primary"></td>
+</table>
+</form>
+</tr>
+</body>
+</html>
+{% endblock %}
